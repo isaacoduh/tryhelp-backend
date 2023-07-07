@@ -17,18 +17,20 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:6'
+            'password' => 'required|string|min:6',
+            'phone' => 'required'
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone
         ]);
 
 
         return response()->json([
-            'message' => 'User Created!',
+            'message' => 'Account Created Successfully',
             'data' => $user
         ]);
     }
