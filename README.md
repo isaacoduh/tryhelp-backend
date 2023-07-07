@@ -16,6 +16,8 @@ TryHelp is a web-based app for businesses, to reach wider audiences. Create a pr
 <!-- - Reporting and analytics for sales, customer insights, and popular products. -->
 <!-- - many more.... -->
 
+# Stack and Purpose
+- Redis: Currently used in Queues to send emails, as a nonblocking mechanism.
 
 ## Key Takeaways
 - TDD In Action
