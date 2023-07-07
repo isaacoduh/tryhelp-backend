@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\API\v1;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendNewUserAccountEmail;
+use App\Mail\NewUserAccountMail;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
@@ -27,6 +31,12 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'phone' => $request->phone
         ]);
+
+        if($user){
+            // Mail::to($user->email)->send(new NewUserAccountMail($user));
+            SendNewUserAccountEmail::dispatch($user);
+            Log::info('Dispatched Request to Create A New Email Account' . $request->email);
+        }
 
 
         return response()->json([
