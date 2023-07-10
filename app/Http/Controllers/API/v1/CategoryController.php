@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        $data = Category::all();
+        $limit = $request->input('limit', 5);
+        $data = Category::latest()->limit($limit)->get();
 
         return response()->json([
             'message' => 'Data Retrieved',

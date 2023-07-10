@@ -19,35 +19,32 @@ class CategoriesTableSeeder extends Seeder
         
         $parentCategories = [
             [
-                'name' => 'Clothing and Accessories',
+                'name' => 'Plumber',
                 'icon' => 'fas fa-laptop',
             ],
             [
-                'name' => 'Home and Kitchen'
+                'name' => 'Smart Home'
             ],
             [
-                'name' => 'Health and Wellness'
+                'name' => 'Painter'
             ],
             [
-                'name' => 'Personal Care and Beauty'
+                'name' => 'Pest Control'
             ],
             [
-                'name' => 'Electronics and Gadgets'
+                'name' => 'Carpenter'
             ],
             [
-                'name' => 'Sustainable Food and Beverages'
+                'name' => 'Security'
             ],
             [
-                'name' => 'Eco-friendly Cleaning Supplies'
+                'name' => 'Ac Repair'
             ],
             [
-                'name' => 'Outdoor and Recreation'
+                'name' => 'Salon'
             ],
             [
-                'name' => 'Sustainable Baby and Kids Products'
-            ],
-            [
-                'name' => 'Green Living and Lifestyle'
+                'name' => 'Barber'
             ],
         ];
 

@@ -16,6 +16,7 @@ class UserAuthTest extends TestCase
         $data = [
             'email' => 'test@gmail.com',
             'name' => 'Test Abel',
+            'phone' => '12345678',
             'password' => 'secret1234',
             'password_confirmation' => 'secret1234'
         ];
@@ -32,6 +33,7 @@ class UserAuthTest extends TestCase
         $userData = [
             'email' => 'test@gmail.com',
             'name' => 'Test Abel',
+            'phone' => '123456789',
             'password' => bcrypt('secret1234')
         ];
         User::create($userData);
@@ -52,6 +54,7 @@ class UserAuthTest extends TestCase
         $userData = [
             'email' => 'test@gmail.com',
             'name' => 'Test Abel',
+            'phone' => '123456789',
             'password' => bcrypt('secret1234')
         ];
         $user = User::create($userData);
